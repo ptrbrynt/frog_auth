@@ -30,7 +30,7 @@ Middleware bearerAuthentication<User extends Object>({
 
       try {
         final token = authHeader.split(' ')[1];
-        final user = await retrieveUser(token);
+        final user = await retrieveUser(context, token);
 
         if (user == null) {
           return Response(statusCode: HttpStatus.unauthorized);
@@ -45,5 +45,6 @@ Middleware bearerAuthentication<User extends Object>({
 }
 
 typedef UserFromToken<User extends Object> = Future<User?> Function(
+  RequestContext context,
   String token,
 );

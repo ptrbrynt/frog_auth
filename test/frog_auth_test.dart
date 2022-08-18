@@ -27,7 +27,7 @@ void main() {
     setUp(() {
       handler = const Pipeline().addMiddleware(
         basicAuthentication(
-          retrieveUser: (username, password) async {
+          retrieveUser: (_, username, password) async {
             return username == 'peter' && password == 'test'
                 ? <String, dynamic>{'username': username}
                 : null;
@@ -117,7 +117,7 @@ void main() {
     setUp(() {
       handler = const Pipeline().addMiddleware(
         bearerAuthentication(
-          retrieveUser: (token) async {
+          retrieveUser: (_, token) async {
             return token == 'test_token'
                 ? <String, dynamic>{'username': 'test'}
                 : null;

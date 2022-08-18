@@ -41,7 +41,7 @@ Middleware basicAuthentication<User extends Object>({
         final username = credentials.first;
         final password = credentials[1];
 
-        final user = await retrieveUser(username, password);
+        final user = await retrieveUser(context, username, password);
 
         if (user == null) {
           return Response(statusCode: HttpStatus.unauthorized);
@@ -56,6 +56,7 @@ Middleware basicAuthentication<User extends Object>({
 }
 
 typedef UserFromCredentials<User extends Object> = Future<User?> Function(
+  RequestContext context,
   String username,
   String password,
 );

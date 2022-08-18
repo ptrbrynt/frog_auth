@@ -1,6 +1,6 @@
 name: frog_auth
 description: Authentication for Dart Frog apps
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/ptrbrynt/frog_auth
 
 environment:
