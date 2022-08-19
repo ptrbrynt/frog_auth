@@ -20,7 +20,7 @@ To support [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_aut
 Handler middleware(Handler handler) {
     return handler.use(
         basicAuthentication(
-            retrieveUser: (username, password) async {
+            retrieveUser: (context, username, password) async {
                 // TODO Retrieve user by username/password
             },
         ),
@@ -42,7 +42,7 @@ To support [Bearer authentication](https://datatracker.ietf.org/doc/html/rfc6750
 Handler middleware(Handler handler) {
     return handler.use(
         bearerAuthentication(
-            retrieveUser: (token) async {
+            retrieveUser: (context, token) async {
                 // TODO Retrieve user by token
             },
         ),
