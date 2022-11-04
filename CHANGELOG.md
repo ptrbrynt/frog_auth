@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Updated to dart_frog 0.0.2
+
 ## 0.0.2
 
 - Provide `RequestContext` in `retrieveUser` callbacks
